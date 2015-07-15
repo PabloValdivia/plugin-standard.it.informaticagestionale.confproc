@@ -443,7 +443,7 @@ public class LoadSOFromBProcessPO extends SvrProcess
 	{
 		CPMOrder so = new CPMOrder (getCtx(), 0, get_TrxName());
 /**
- * modifiche per Teknema
+ * 
  		System.out.println(po.getTEK_CAT_ID());
 		TEKCat tekCat = new TEKCat (getCtx(), po.getTEK_CAT_ID(), get_TrxName());
 	*/
@@ -458,7 +458,7 @@ public class LoadSOFromBProcessPO extends SvrProcess
 		so.setSalesRep_ID(po.getSalesRep_ID());
 		so.setM_Warehouse_ID(po.getM_Warehouse_ID());
 		
-		//	Set Vendor modifiche per Teknema
+		//
 //		System.out.println(tekCat.getC_BPartner_ID());
 //		if (tekCat.getC_BPartner_ID()!= 0) 
 //		{
@@ -500,7 +500,6 @@ public class LoadSOFromBProcessPO extends SvrProcess
 	public CPMOrder createSO(CP_ProcessFlow tpo)
 	{
 		CPMOrder so = new CPMOrder (getCtx(), 0, get_TrxName());
-	//modifiche per Teknema
 		//	TEKCat tekCat = new TEKCat (getCtx(), p_TEK_CAT_ID, get_TrxName());
 		so.setClientOrg(tpo.getAD_Client_ID(), tpo.getAD_Org_ID());
 	    //so.setRef_Order_ID(tpo.getTEK_PROCESSO_CHIAMATA_ID());
@@ -513,18 +512,12 @@ public class LoadSOFromBProcessPO extends SvrProcess
 		//so.setSalesRep_ID(tpo.getSalesRep_ID());
 		so.setM_Warehouse_ID(Integer.parseInt( getCtx().getProperty("#M_Warehouse_ID")));//default warehouse
 		so.setDescription("Created by it.informaticagestionale.confproc.process: " +tpo.getName());
-		//	Set Vendor modifiche per Teknema
-//		System.out.println("OrderSoCreate:createSOForTekCat Partner_ID - "+ tekCat.getC_BPartner_ID());
-//		if (tekCat.getC_BPartner_ID()!= 0) 
-//		{
-//		MBPartner vendor = new MBPartner (getCtx(), tekCat.getC_BPartner_ID() , get_TrxName());
-//		so.setBPartner(vendor);
-//		}
+
 //		//	Drop Ship
 		so.setIsDropShip(so.isDropShip());
 		if (so.isDropShip())
 	{
-		// modifiche per Teknema	so.setShip_BPartner_ID(tekCat.getC_BPartner_ID());
+		// 	so.setShip_BPartner_ID(tekCat.getC_BPartner_ID());
 			//so.setShip_Location_ID(tpo.getC_BPartner_Location_ID());
 			so.setShip_User_ID(tpo.getAD_User_ID());
 		}
