@@ -530,7 +530,7 @@ public class LoadMovementFromBProcess extends SvrProcess
 		// se per movimentazione ai clienti
 
 	/**
-	 * modifiche per Teknema
+	 * 
 	 
 		
 		if (rLine.isForShipment())

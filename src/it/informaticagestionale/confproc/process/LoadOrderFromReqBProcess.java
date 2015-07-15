@@ -302,7 +302,7 @@ public class LoadOrderFromReqBProcess extends SvrProcess
 	 * 	Create new Order
 	 *	@param rLine request line
 	 */
-	private void newOrder(CPMRequisitionLine rLine, int C_BPartner_ID) throws Exception //modifiche per Teknema,int TEK_CAT_ID)
+	private void newOrder(CPMRequisitionLine rLine, int C_BPartner_ID) throws Exception //
 	{
 		if (m_order != null)
 			closeOrder();
@@ -316,7 +316,7 @@ public class LoadOrderFromReqBProcess extends SvrProcess
 		m_order.setIsSOTrx(false);
 		m_order.setC_DocTypeTarget_ID();
 		m_order.setBPartner(m_bpartner);
-		m_order.setM_PriceList_ID(rLine.getParent().getM_PriceList_ID()); //modifica di Giorgio 11-06-2007 --> listino prezzi Teknema
+		m_order.setM_PriceList_ID(rLine.getParent().getM_PriceList_ID()); //modifica di Giorgio 11-06-2007 --> 
 		
 	//	default po document type
 		if (!p_ConsolidateDocument)
@@ -398,8 +398,8 @@ public class LoadOrderFromReqBProcess extends SvrProcess
 		//	New Order - Different Vendor
 		if (m_order == null 
 			//	|| m_order.getC_BPartner_ID() != C_BPartner_ID)
-			|| m_order.getC_BPartner_ID() != C_BPartner_ID)//modifiche per Teknema || m_order.getTEK_CAT_ID()!=TEK_CAT_ID) //modifica Giorgio 16-3-2007
-			newOrder(rLine, C_BPartner_ID);//modifica per Teknema, TEK_CAT_ID); //modifica di Giorgio 16-3-2007
+			|| m_order.getC_BPartner_ID() != C_BPartner_ID)// m_order.getTEK_CAT_ID()!=TEK_CAT_ID) //modifica Giorgio 16-3-2007
+			newOrder(rLine, C_BPartner_ID);//, TEK_CAT_ID); //modifica di Giorgio 16-3-2007
 
 		//	No Order Line
 		m_orderLine = new CPMOrderLine(m_order);
